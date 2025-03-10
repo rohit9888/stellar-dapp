@@ -1,50 +1,34 @@
 import React from "react";
 
 import freighterApi from "@stellar/freighter-api";
-import Payment from "./paymentPage";
-const ConnectWallet = async () => {
 
-    const isAppConnected = await freighterApi.isConnected();
-    console.log({ isAppConnected });
-    Payment.nameEmailSave
-
-
-    if (isAppConnected.isConnected) {
-        const isAppAllowed = await freighterApi.isAllowed();
-        if (!isAppAllowed.isAllowed) {
-            await freighterApi.setAllowed();
-        }
-        if (isAppAllowed.isAllowed) {
-            const retrievePublicKey = async () => {
-                const addressObj = await freighterApi.getAddress();
-
-                if (addressObj.error) {
-                    return addressObj.error;
-                } else {
-                    return addressObj.address;
-                }
-            };
-
-            const result = await retrievePublicKey();
-            console.log(result);
-
-        }
-        const retrieveNetwork = async () => {
-            const networkObj = await freighterApi.getNetwork();
-          
-            if (networkObj.error) {
-              return networkObj.error;
-            } else {
-              return {
-                network: networkObj.network,
-                networkPassphrase: networkObj.networkPassphrase,
-              };
+const CheckWalletConnect =async ()=>{
+        const isAppAvailable = await freighterApi.isConnected();
+        if (isAppAvailable.isConnected) {
+            const isAppAllowed = await freighterApi.isAllowed();
+            if(isAppAllowed.isAllowed){
+                console.log(isAppAllowed.isAllowed);
+                
+                return true;
+            }  
+    
+    }}
+    const ConnectWallet = async () => {
+        const isAppAvailable = await freighterApi.isConnected();
+        console.log({ isAppAvailable });
+    
+        if (isAppAvailable.isConnected) {
+            const isAppAllowed = await freighterApi.isAllowed();
+            
+            if (!isAppAllowed.isAllowed) {
+                const allowed =  await freighterApi.setAllowed();
+     
+            if (allowed.isAllowed) {
+              return true;
             }
-          };
-          
-          const result = retrieveNetwork();
+    }
+    }
+    
     }
 
-}
-
-export default ConnectWallet;
+export  {CheckWalletConnect, ConnectWallet};

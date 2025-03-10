@@ -2,12 +2,15 @@ import React, { useState } from 'react';
 import img from "./images/GorilaaPay_Blue_logo_2.png";
 import usdc from "./images/usd-coin-usdc-logo 1.png";
 
+
+import {CheckWalletConnect, ConnectWallet} from "./connectWallet.jsx";
+
+
 function PaymentPage() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [text, setText] = useState('Continue');
-    const [walletConnect,setWalletConnect] = useState(false)
-    
+   
     return (
         <div id="outermostBox">
             <div id="gorillaPayBox">
@@ -67,9 +70,21 @@ function PaymentPage() {
                             cursor: email && name ? "pointer" : "not-allowed",
                             
                         }}
-                    onClick={() => {
-                        if (email && name) setText("Connect Wallet");
-                   }}
+                   onClick={async() => {
+                        if (email && name) {
+                            if (text === "Continue") {
+                                const result = await CheckWalletConnect()
+                                result?setText('Pay Now'): setText("Connect Wallet")
+                                }
+                             else if (text === "Connect Wallet") {
+                                const result = await ConnectWallet()
+                                result?setText('Pay Now'): setText("Connect Wallet")
+
+                            } else if (text === "Pay Now" ) {
+                                console.log("Processing payment...");
+                            }
+                        }
+                    }}
                 >
                     {text}
                 </div>
