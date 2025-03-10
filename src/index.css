@@ -14,71 +14,57 @@ body {
   padding: 0;
 }
 
-#gorilla-pay-logo {
-  background-image: url('../images/GorilaaPay_Blue_logo_2.png');
-  background-position: 114px 25px;
-  width: 348px;
-  height: 79px;
-  background-repeat: no-repeat;
-  position: absolute;
 
-}
-
-#containers {
-  position: relative;
-  top: 180px;
-  left: 513px;
-  background-color: #FFF;
+#outermostBox {
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+  background: #FFF;
   width: calc(366px + 32px);
   height: calc(614px + 48px);
-  display: inline-flex;
-  padding: 24px 16px;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 34px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 180px;
 }
 
-
 #gorillaPayBox {
-  
   width: 366px;
   height: 54px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-}
-
-#bigbox {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 32px;
-  align-self: stretch;
-  width: 366px;
-  height: 237px;
-
-}
-
-#namebox {
-  width: 366px;
-  height: 255px;
-  gap: 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#requested {
-  display: flex;
-  padding: 8px;
   justify-content: center;
+}
+
+#centreBox {
+  row-gap: 32px;
+  display: flex;
+  width: calc(366px);
+  height: calc(237px);
+  flex-direction: column;
   align-items: center;
-  gap: 8px;
-  align-self: stretch;
+}
+
+#texted {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+
+}
+
+#text {
   color: #646464;
-  width: calc(350px + 16px);
-  height: calc(19px + 16px);
+  font-family: Chivo;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-right: 0.25em;
+
+}
+
+#text2 {
+  color: #646464;
   font-family: Chivo;
   font-size: 20px;
   font-style: normal;
@@ -87,44 +73,10 @@ body {
 
 }
 
-#gorillatech {
-  font-size: 28px;
-  font-weight: 700;
-}
-
-#amountbox {
-  position: relative;
+#usdc {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 6px;
-  align-self: stretch;
-  width: 366px;
-  height: 41px;
-}
-
-#usdcbox {
-  width: 36px;
-  height: 36px;
-  flex-shrink: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.usdclogo {
-  width: 27px;
-  height: 27px;
-  flex-shrink: 0;
-}
-
-#amount {
-  display: flex;
-  padding: 8px 8px 8px 0px;
-  justify-content: center;
-  align-items: center;
-  width: calc(98px + 8px);
-  height: calc(25px + 16px);
   color: #8F8F8F;
   font-family: Chivo;
   font-size: 36px;
@@ -133,33 +85,13 @@ body {
   line-height: normal;
 }
 
-#usdc {
-  display: flex;
-  width: calc(43px + 16px);
-  height: calc(16px + 16px);
-  padding: 8px;
-  justify-content: center;
-  align-items: center;
-  color: #8F8F8F;
-  font-family: Chivo;
+
+#usdctext {
   font-size: 24px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
 }
 
 #for {
-  position: relative;
-  display: flex;
-  padding: 8px;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  align-self: stretch;
-  width: calc(350px + 16px);
-  height: calc(14px + 16px);
   color: #A0A0A0;
-
   font-family: Chivo;
   font-size: 20px;
   font-style: normal;
@@ -167,308 +99,49 @@ body {
   line-height: normal;
 }
 
-#white {
-  position: relative;
-  display: flex;
-  padding: 8px;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  align-self: stretch;
-  width: calc(350px + 16px);
-  height: calc(19px + 16px);
-  color: #646464;
-  font-family: Chivo;
-  font-size: 28px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-
-#nameEmail {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 12px;
-  width: 350px;
-  height: 170px;
-}
-
-#names {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 8px;
-  width: 350px;
-  height: 79px;
-}
-
-#namekey {
-  display: flex;
-  padding: 8px 0px;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  width: 55px;
-  height: calc(11px + 16px);
-  color: #8F8F8F;
-  font-family: Chivo;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 30px;
-}
-
-#namesbox {
-  display: flex;
-  width: calc(350px + 2px);
-  height: calc(44px + 2px);
-  padding: 8px 12px;
-  align-items: center;
-  align-items: flex-start;
-  gap: 6px;
-  border-radius: 5px;
-  border: 1px solid #CBCBCB;
-  background: rgba(217, 217, 217, 0.00);
-
-}
-#namesbox input{
-  width: 100%;
-  height: 100%;
-  border: none;
-  outline: none;
-  color: #535353;
-  font-family: Chivo;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 30px;
-  padding: 8px 0;
-  font-style: normal;
-}
-
-#finalname {
-  display: flex;
-  padding: 8px 0px;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  width: calc(95px);
-  height: calc(11px + 16px);
-}
-
-#emailbox {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 8px;
-  width: 350px;
-  height: 79px;
-}
-
-#emailkey {
-  display: flex;
-  padding: 8px 0px;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  width: calc(53px);
-  height: calc(11px + 16px);
-  color: #8F8F8F;
-  font-family: Chivo;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 30px;
-  /* 187.5% */
-}
-
-
-
-#emailvalue input {
-  width: 100%;
-  height: 100%;
-  border: none;
-  outline: none;
-  background: transparent;
-  color: #535353;
-  font-family: Chivo;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 30px;
-  padding: 8px 0;
-}
-
-#emailvalue {
-  width: calc(350px + 2px);
-  height: calc(44px + 2px);
-  padding: 8px 12px;
-  display: flex;
-  align-items: flex-start;
-  gap: 6px;
-  border-radius: 5px;
-  border: 1px solid #CBCBCB;
-  background: rgba(217, 217, 217, 0.00);
-}
-
-
-
-#emailvalue2 {
-  display: flex;
-  padding: 8px 0px;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  width: calc(126px);
-  height: calc(11px + 16px);
- 
-}
-
 #continue {
-  display: flex;
-  width: 366px;
-  padding: 8px;
-  justify-content: center;
-  align-items: center;
-  gap: 220px;
-  height: calc(45px + 16 px);
+  color: #8F8F8F;
+  font-family: Chivo;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+  gap: 12px;
 }
 
-#continue2 {
+#box {
+  width: calc(350px);
+  height: 44px;
+  border-radius: 5px;
+  border: 1px solid #CBCBCB;
+  outline: none;
+  color: #535353;
+  font-family: Chivo;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px; /* 187.5% */
+  padding: 8px 12px;
+}
+
+#continueButton {
   display: flex;
-  width: calc(366px + 24px);
   height: 45px;
-  border: none;
   padding: 8px 12px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 8px;
   flex: 1 0 0;
+  width: calc(326px + 24px);
   border-radius: 5px;
   
-  outline: none;
-}
-#continue2:hover {
-  cursor: pointer;
-}
-
-#continuebutton {
-  display: flex;
-  width: 142px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  height: 25px;
-  padding: 0px 27px 1px 28px;
+  top: 32px;
+  position: relative;
   color: #FFF;
   font-family: Chivo;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  flex-shrink: 0;
-}
-
-#nameEmailSave{
-  padding:0px 8px 0px 8px;
-  display: flex;
-  gap:20px;
-  width:calc(350px + 16px);
-  height:108px;
-  flex-direction: column;
-
-}
-
-
-#NameSave{
-  color: rgba(121, 121, 121, 0.81);
-  font-family: Chivo;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-}
-
-#NameSaved{
-  color: rgba(121, 121, 121, 0.81);
-font-family: Chivo;
-font-size: 18px;
-font-style: normal;
-font-weight: 900;
-line-height: normal;
-}
-
-#warning{
-  color: #646464;
-  font-family: Chivo;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 130%; 
-
-}
-
-#frame{
-  gap:18px;
-  padding:24px 16px;
-  display:inline-flex;
-  height:calc(634px + 48px);
-  width: calc(367px +32px);
-  flex-direction: column;
-  align-items: flex-start;
-  background-color: #FFF;;
-  top:180px;
-  left: 513px;
-  position:relative;
-  text-wrap:wrap;
-}
-#outerBox{
-  gap: 42px;
-  display: flex;
-  flex-direction: column;
-}
-
-#warning{
-  padding: 0px 8px 0px 8px;
-  width: calc(351px + 16px);
-  color: #646464;
-font-family: Chivo;
-font-size: 14px;
-font-style: normal;
-font-weight: 400;
-line-height: 130%; 
-}
-
-#pay2{
-    display: flex;
-    width: calc(366px + 24px);
-    height: 45px;
-    border: none;
-    padding: 8px 12px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    flex: 1 0 0;
-    border-radius: 5px;
-    
-    outline: none;
-}
-
-#payButton{
-  display: flex;
-  width: 142px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  height: 25px;
-  padding: 0px 27px 1px 28px;
-  color: #FFF;
-  font-family: Chivo;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  flex-shrink: 0;
 }
